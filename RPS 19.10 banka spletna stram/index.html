@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <title>Banka</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="glava sticky-top bg-white">
+    <nav class="navbar navbar-expand py-3">
+        <div class="container">
+            <a class="navbar-brand logotip" href="#">Benko<span class="logotip-pika">.</span></a>
+                <ul class="navbar-nav ms-auto align-items-center gap-4">
+                <li class="nav-item"><a class="nav-link navigacija-povezava" href="#storitve">Storitve</a></li>
+                <li class="nav-item"><a class="nav-link navigacija-povezava" href="#kredit">Kredit</a></li>
+                <li class="nav-item"><a class="nav-link navigacija-povezava" href="#o-banki">O banki</a></li>
+                <li class="nav-item"><a class="btn gumb-zlat rounded-0" href="#kontakt">Spletna banka</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section class="uvodni-del razdelek">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-7">
+                <h1 class="uvodni-naslov">Denar, ki stoji na trdnih temeljih.</h1>
+                <p class="uvodni-opis fs-5 my-4">Varčevanje, krediti in vsakdanji računi na enem mestu. Brez skritih stroškov, z jasnimi pogoji.</p>
+                <a class="btn btn-lg gumb-zlat rounded-0 me-3" href="#kredit">Izračunaj kredit</a>
+                <a class="btn btn-lg gumb-obroba rounded-0" href="#storitve">Poglej storitve</a>
+            </div>
+            <div class="col-5 text-end">
+                <svg class="uvodna-slika" viewBox="0 0 400 400" role="img" aria-label="Simbolični prikaz bančne stavbe">
+                    <polygon points="40,150 200,50 360,150" fill="none" stroke="#c9a227" stroke-width="6"/>
+                    <rect x="70" y="170" width="40" height="150" fill="#c9a227"/>
+                    <rect x="140" y="170" width="40" height="150" fill="#12315c"/>
+                    <rect x="220" y="170" width="40" height="150" fill="#12315c"/>
+                    <rect x="290" y="170" width="40" height="150" fill="#c9a227"/>
+                    <rect x="40" y="335" width="320" height="20" fill="#12315c"/>
+                    <rect x="20" y="360" width="360" height="20" fill="#c9a227"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="storitve" class="razdelek">
+    <div class="container">
+        <h2 class="naslov-razdelka mb-5">Kar potrebujete, brez odvečnega.</h2>
+        <div class="row g-4">
+            <div class="col-4">
+                <article class="card kartica-storitve h-100 rounded-0 p-4">
+                    <svg class="ikona-storitve" viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="24" fill="none" stroke="currentColor" stroke-width="3"/><line x1="6" y1="22" x2="42" y2="22" stroke="currentColor" stroke-width="3"/></svg>
+                    <h3 class="naslov-kartice mt-4">Osebni račun</h3>
+                    <p class="mb-0">Brezplačno vodenje, kartica in plačila v realnem času.</p>
+                </article>
+            </div>
+        <div class="col-4">
+            <article class="card kartica-storitve h-100 rounded-0 p-4">
+                <svg class="ikona-storitve" viewBox="0 0 48 48"><polyline points="6,38 18,24 26,30 42,10" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="30,10 42,10 42,22" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                <h3 class="naslov-kartice mt-4">Varčevanje</h3>
+                <p class="mb-0">Fiksna obrestna mera in dostop do sredstev, ko jih potrebujete.</p>
+            </article>
+        </div>
+        <div class="col-4">
+                    <article class="card kartica-storitve h-100 rounded-0 p-4">
+                    <svg class="ikona-storitve" viewBox="0 0 48 48"><path d="M24 5 L40 12 V24 C40 33 33 40 24 43 C15 40 8 33 8 24 V12 Z" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="16,24 22,30 33,18" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                    <h3 class="naslov-kartice mt-4">Zavarovanje</h3>
+                    <p class="mb-0">Zaščita doma, vozila in družine po pošteni ceni.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="kredit" class="razdelek razdelek-temen">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-6">
+                <h2 class="naslov-razdelka">Kolikšen bo vaš obrok?</h2>
+                <p class="fs-5 mt-4 mb-0">Izberite znesek in dobo. Izračun je okviren.</p>
+            </div>
+            <div class="col-6">
+               <div class="kalkulator-okvir p-5">
+                    <label class="form-label" for="drsnik-zneska">Znesek: <strong id="izpis-zneska">10.000 €</strong></label>
+                    <input class="form-range kalkulator-drsnik mb-4" type="range" id="drsnik-zneska" min="1000" max="50000" step="500" value="10000">
+                    <label class="form-label" for="drsnik-let">Doba: <strong id="izpis-let">5 let</strong></label>
+                    <input class="form-range kalkulator-drsnik mb-4" type="range" id="drsnik-let" min="1" max="15" step="1" value="5">
+                    <label class="form-label" for="drsnik-obresti">Obrestna mera: <strong id="izpis-obresti">5 %</strong></label>
+                    <input class="form-range kalkulator-drsnik mb-4" type="range" id="drsnik-obresti" min="1" max="15" step="0.5" value="5">
+                    <p class="kalkulator-rezultat mb-0 pt-4">Mesečni obrok <strong id="izpis-obroka" class="kalkulator-obrok d-block">0 €</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="o-banki" class="razdelek razdelek-svetlo-moder">
+    <div class="container">
+        <div class="row text-center g-5">
+            <div class="col-4">
+                <strong class="podatek-stevilka d-block">1962</strong>
+                <span>leto ustanovitve</span>
+            </div>
+            <div class="col-4">
+                <strong class="podatek-stevilka d-block">240.000</strong>
+                <span>zadovoljnih strank</span>
+            </div>
+            <div class="col-4">
+                <strong class="podatek-stevilka d-block">0 €</strong>
+                <span>stroškov vodenja računa</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="razdelek razdelek-zlat text-center">
+    <div class="container">
+        <h2 class="naslov-razdelka mb-4 mx-auto">Odprite račun v desetih minutah.</h2>
+        <a class="btn btn-lg gumb-moder rounded-0" href="regist.html">Postanite stranka</a>
+    </div>
+</section>
+
+<footer id="kontakt" class="noga py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <a class="logotip" href="#">Benko<span class="logotip-pika">.</span></a>
+                <p class="mt-2 mb-0">Slovenska ulica 1, 1000 Ljubljana</p>
+            </div>
+            <div class="col-6">
+                <p class="mb-1">info@benko.si</p>
+                <p class="mb-0">+386 1 234 56 78</p>
+            </div>
+        </div>
+        <p class="noga-pravno mt-4 pt-3 mb-0">© 2026 Benko banka.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

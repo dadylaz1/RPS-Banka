@@ -1,0 +1,219 @@
+:root {
+  --moda: #12315c;
+  --svetlo-modra: #e8f1fa;
+  --srednje-modra: #a9c8e8;
+  --zlata: #c9a227;
+  --temno-zlata: #8f7114;
+  --bela: #ffffff;
+  --bs-body-font-family: 'Public Sans', Arial, sans-serif;
+  --bs-body-color: #12315c;
+}
+
+h1,
+h2,
+h3,
+.logotip,
+.podatek-stevilka,
+.kalkulator-obrok {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+}
+
+.glava {
+  border-bottom: 3px solid var(--zlata);
+}
+
+.logotip {
+  font-size: 30px;
+  color: var(--moda);
+  text-decoration: none;
+}
+
+.logotip-pika {
+  color: var(--zlata);
+}
+
+.navigacija-povezava {
+  color: var(--moda);
+  font-weight: 600;
+}
+
+.navigacija-povezava:hover {
+  color: var(--temno-zlata);
+}
+
+.gumb-zlat,
+.gumb-moder,
+.gumb-obroba {
+  font-weight: 600;
+  padding: 12px 28px;
+}
+
+.gumb-zlat {
+  --bs-btn-bg: var(--zlata);
+  --bs-btn-color: var(--moda);
+  --bs-btn-border-color: var(--zlata);
+  --bs-btn-hover-bg: var(--moda);
+  --bs-btn-hover-color: var(--bela);
+  --bs-btn-hover-border-color: var(--moda);
+}
+
+.gumb-moder {
+  --bs-btn-bg: var(--moda);
+  --bs-btn-color: var(--bela);
+  --bs-btn-border-color: var(--moda);
+  --bs-btn-hover-bg: var(--bela);
+  --bs-btn-hover-color: var(--moda);
+  --bs-btn-hover-border-color: var(--bela);
+}
+
+.gumb-obroba {
+  --bs-btn-color: var(--moda);
+  --bs-btn-border-color: var(--moda);
+  --bs-btn-hover-bg: var(--moda);
+  --bs-btn-hover-color: var(--bela);
+  --bs-btn-hover-border-color: var(--moda);
+}
+
+.razdelek {
+  padding: 112px 0;
+}
+
+.razdelek-temen {
+  background: var(--moda);
+  color: var(--bela);
+}
+
+.razdelek-svetlo-moder,
+.uvodni-del {
+  background: var(--svetlo-modra);
+}
+
+.razdelek-zlat {
+  background: var(--zlata);
+}
+
+.uvodni-naslov {
+  font-size: 68px;
+  line-height: 1.1;
+}
+
+.uvodni-opis {
+  max-width: 46ch;
+}
+
+.uvodna-slika {
+  width: 100%;
+  max-width: 400px;
+}
+
+.naslov-razdelka {
+  font-size: 44px;
+  line-height: 1.15;
+  max-width: 20ch;
+}
+
+.kartica-storitve {
+  border: 1px solid var(--srednje-modra);
+  border-top: 4px solid var(--zlata);
+}
+
+.kartica-storitve:hover {
+  background: var(--svetlo-modra);
+}
+
+.ikona-storitve {
+  width: 52px;
+  height: 52px;
+  color: var(--temno-zlata);
+}
+
+.naslov-kartice {
+  font-size: 24px;
+}
+
+.kalkulator-okvir {
+  border: 2px solid var(--zlata);
+}
+
+.kalkulator-drsnik {
+  accent-color: var(--zlata);
+}
+
+.kalkulator-rezultat {
+  border-top: 1px solid var(--srednje-modra);
+  font-size: 18px;
+}
+
+.kalkulator-obrok {
+  font-size: 48px;
+  color: var(--zlata);
+}
+
+.podatek-stevilka {
+  font-size: 56px;
+  color: var(--temno-zlata);
+}
+
+.noga {
+  background: var(--moda);
+  color: var(--bela);
+}
+
+.noga .logotip {
+  color: var(--bela);
+}
+
+.noga-pravno {
+  border-top: 1px solid var(--temno-zlata);
+  font-size: 14px;
+  color: var(--srednje-modra);
+}
+
+.registracija-del {
+  background: var(--svetlo-modra);
+}
+ 
+.registracija-okvir {
+  border: 1px solid var(--srednje-modra);
+}
+ 
+.registracija-stranska-plosca {
+  background: var(--moda);
+  color: var(--bela);
+  border-right: 4px solid var(--zlata);
+}
+ 
+.registracija-naslov {
+  font-size: 40px;
+  line-height: 1.15;
+}
+ 
+.registracija-podnaslov {
+  font-size: 32px;
+}
+ 
+.registracija-prednosti li {
+  padding-left: 20px;
+  border-left: 3px solid var(--zlata);
+}
+ 
+.registracija-povezava {
+  color: var(--temno-zlata);
+  font-weight: 600;
+}
+ 
+.form-control:focus {
+  border-color: var(--zlata);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.25);
+}
+ 
+.form-check-input:checked {
+  background-color: var(--zlata);
+  border-color: var(--zlata);
+}
+ 
+.form-check-input:focus {
+  border-color: var(--zlata);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.25);
+}
