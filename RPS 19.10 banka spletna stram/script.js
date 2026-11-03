@@ -3,6 +3,8 @@ const drsnikLet = document.getElementById('drsnik-let');
 const drsnikObresti = document.getElementById('drsnik-obresti');
 
 function izracunajObrok() {
+    if (!drsnikZneska || !drsnikLet || !drsnikObresti) return;
+
     const znesek = Number(drsnikZneska.value);
     const stMesecev = Number(drsnikLet.value) * 12;
     const letnaObrestnaMera = Number(drsnikObresti.value);
@@ -15,7 +17,9 @@ function izracunajObrok() {
     document.getElementById('izpis-obroka').textContent = obrok.toFixed(2).replace('.', ',') + ' €';
 }
 
-drsnikZneska.addEventListener('input', izracunajObrok);
-drsnikLet.addEventListener('input', izracunajObrok);
-drsnikObresti.addEventListener('input', izracunajObrok);
-izracunajObrok();
+if (drsnikZneska && drsnikLet && drsnikObresti) {
+    drsnikZneska.addEventListener('input', izracunajObrok);
+    drsnikLet.addEventListener('input', izracunajObrok);
+    drsnikObresti.addEventListener('input', izracunajObrok);
+    izracunajObrok();
+}

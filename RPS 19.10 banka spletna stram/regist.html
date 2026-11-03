@@ -2,7 +2,8 @@
 <html lang="sl">
 <head>
     <meta charset="UTF-8">
-    <title>Banka</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registracija | Benko banka</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
                 <li class="nav-item"><a class="nav-link navigacija-povezava" href="#storitve">Storitve</a></li>
                 <li class="nav-item"><a class="nav-link navigacija-povezava" href="#kredit">Kredit</a></li>
                 <li class="nav-item"><a class="nav-link navigacija-povezava" href="#o-banki">O banki</a></li>
-                <li class="nav-item"><a class="btn gumb-zlat rounded-0" href="#kontakt">Spletna banka</a></li>
+                <li class="nav-item"><a class="btn gumb-zlat rounded-0" href="prijava.html">Spletna banka</a></li>
             </ul>
         </div>
     </nav>
@@ -40,7 +41,8 @@
  
             <div class="col-7 bg-white p-5">
                 <h2 class="registracija-podnaslov mb-4">Ustvarite račun</h2>
-                    <form id="obrazec-registracije" action="index.html" method="get">
+                    <form id="obrazec-registracije" novalidate>
+                        <div class="alert d-none" id="sporocilo-obrazca" role="alert"></div>
                         <div class="row g-3 mb-3">
                             <div class="col-6">
                                 <label class="form-label" for="polje-ime">Ime</label>
@@ -73,19 +75,21 @@
                                 <label class="form-label" for="polje-geslo">Geslo</label>
                                 <input class="form-control rounded-0" type="password" id="polje-geslo" name="geslo" minlength="8" required>
                             </div>
-                        <div class="col-6">
-                            <label class="form-label" for="polje-ponovitev-gesla">Ponovite geslo</label>
-                            <input class="form-control rounded-0" type="password" id="polje-ponovitev-gesla" name="ponovitev-gesla" minlength="8" required>
+                            <div class="col-6">
+                                <label class="form-label" for="polje-ponovitev-gesla">Ponovite geslo</label>
+                                <input class="form-control rounded-0" type="password" id="polje-ponovitev-gesla" name="ponovitev-gesla" minlength="8" autocomplete="new-password" required>
+                                <div class="invalid-feedback">Gesli se morata ujemati.</div>
+                            </div>
                         </div>
  
                         <div class="form-check mb-4">
-                            <input class="form-check-input rounded-0" type="checkbox" id="polje-pogoji" required>
+                            <input class="form-check-input rounded-0" type="checkbox" id="polje-pogoji" name="pogoji" required>
                             <label class="form-check-label" for="polje-pogoji">Strinjam se s splošnimi pogoji poslovanja.</label>
                         </div>
  
                         <button class="btn btn-lg gumb-zlat rounded-0 w-100" type="submit">Registriraj se</button>
                     </form>
-                <p class="registracija-povezava-prijave mt-4 mb-0">Že imate račun? <a class="registracija-povezava" href="index.html">Prijava</a></p>
+                <p class="registracija-povezava-prijave mt-4 mb-0">Že imate račun? <a class="registracija-povezava" href="prijava.html">Prijava</a></p>
             </div>
         </div>
     </div>
@@ -110,5 +114,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="racun.js"></script>
 </body>
 </html>

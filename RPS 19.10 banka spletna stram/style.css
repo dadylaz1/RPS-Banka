@@ -217,3 +217,43 @@ h3,
   border-color: var(--zlata);
   box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.25);
 }
+
+.obmocje-racuna {
+  min-height: calc(100vh - 85px);
+  background: var(--svetlo-modra);
+}
+
+.kartica-racuna,
+.kartica-nastavitev {
+  border: 1px solid var(--srednje-modra);
+  border-top: 4px solid var(--zlata);
+}
+
+.stanje-racuna {
+  color: var(--temno-zlata);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.glasba-gumb {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1050;
+  box-shadow: 0 3px 14px rgba(18, 49, 92, 0.2);
+}
+
+@media (max-width: 767.98px) {
+  .registracija-okvir > [class*="col-"] {
+    width: 100%;
+  }
+
+  .registracija-stranska-plosca {
+    border-right: 0;
+    border-bottom: 4px solid var(--zlata);
+  }
+
+  .razdelek {
+    padding: 72px 0;
+  }
+}

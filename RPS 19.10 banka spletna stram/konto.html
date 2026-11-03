@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moj račun | Benko banka</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="glava sticky-top bg-white">
+    <nav class="navbar navbar-expand py-3">
+        <div class="container">
+            <a class="logotip" href="index.html">Benko<span class="logotip-pika">.</span></a>
+            <div class="d-flex align-items-center gap-3">
+                <a class="navigacija-povezava d-none d-sm-inline" href="nastavitve.html">Nastavitve</a>
+                <button class="btn gumb-obroba rounded-0" id="odjava-gumb" type="button">Odjava</button>
+            </div>
+        </div>
+    </nav>
+</header>
+<main class="obmocje-racuna py-5">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+            <div>
+                <p class="text-uppercase small fw-semibold mb-2">Osebni pregled</p>
+                <h1 class="mb-0">Pozdravljeni, <span id="stranka-ime">...</span></h1>
+            </div>
+            <a class="btn gumb-moder rounded-0" href="nastavitve.html">Uredi nastavitve</a>
+        </div>
+        <div class="alert d-none" id="sporocilo-konta" role="alert"></div>
+        <div class="row g-4 mb-4">
+            <div class="col-lg-7">
+                <section class="card kartica-racuna rounded-0 h-100 p-4 p-md-5">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h2 class="h5">Skupno stanje</h2>
+                            <p class="text-secondary mb-0">Stanje na vaših računih</p>
+                        </div>
+                        <span class="badge text-bg-light">OSEBNI RAČUN</span>
+                    </div>
+                    <p class="stanje-racuna mb-4" id="skupno-stanje">—</p>
+                    <h3 class="h6">Vaši računi</h3>
+                    <div id="seznam-racunov" class="d-grid gap-2">
+                        <p class="text-secondary mb-0">Nalagam račune ...</p>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-5">
+                <section class="card kartica-racuna rounded-0 h-100 p-4 p-md-5">
+                    <h2 class="h5">Osebni podatki</h2>
+                    <p class="text-secondary mb-4">Podatki vašega profila</p>
+                    <dl class="row mb-0">
+                        <dt class="col-4">Ime</dt><dd class="col-8" id="profil-ime">—</dd>
+                        <dt class="col-4">E-pošta</dt><dd class="col-8 text-break" id="profil-eposta">—</dd>
+                        <dt class="col-4">Telefon</dt><dd class="col-8" id="profil-telefon">—</dd>
+                    </dl>
+                    <a class="registracija-povezava mt-3" href="nastavitve.html">Uredi osebne podatke</a>
+                </section>
+            </div>
+        </div>
+        <section class="card kartica-racuna rounded-0 p-4 p-md-5">
+            <h2 class="h4">Moji krediti</h2>
+            <p class="text-secondary">Pregled kreditov, povezanih z vašim računom.</p>
+            <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                    <thead><tr><th>Znesek</th><th>Doba</th><th>Obrestna mera</th><th>Mesečni obrok</th></tr></thead>
+                    <tbody id="seznam-kreditov"><tr><td class="text-secondary" colspan="4">Nalagam kredite ...</td></tr></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="noga py-4"><div class="container"><span class="noga-pravno">© 2026 Benko banka.</span></div></footer>
+<script src="script.js"></script>
+<script src="racun.js"></script>
+</body>
+</html>
