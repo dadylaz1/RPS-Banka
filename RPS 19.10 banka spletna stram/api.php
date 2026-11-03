@@ -26,8 +26,11 @@ function database(): PDO
     $user = getenv('BENKOBANKA_DB_USER');
     $password = getenv('BENKOBANKA_DB_PASSWORD');
 
-    if (!$host || !$name || $user === false || $password === false) {
+    if (!$host || !$name || $user === false || $user === '') {
         throw new RuntimeException('Database environment variables are not configured.');
+    }
+    if ($password === false) {
+        $password = '';
     }
 
     return new PDO(

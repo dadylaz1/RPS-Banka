@@ -48,13 +48,24 @@ const api = async (action, data, method = 'POST') => {
     const csrfToken = sessionStorage.getItem('benko-csrf-token');
     if (csrfToken) headers['X-CSRF-Token'] = csrfToken;
 
-    const response = await fetch(`api.php?action=${encodeURIComponent(action)}`, {
-        method,
-        headers: method === 'POST' ? headers : undefined,
-        body: method === 'POST' ? JSON.stringify(data ?? {}) : undefined,
-        credentials: 'same-origin',
-    });
-    const result = await response.json();
+    let response;
+    try {
+        response = await fetch(`api.php?action=${encodeURIComponent(action)}`, {
+            method,
+            headers: method === 'POST' ? headers : undefined,
+            body: method === 'POST' ? JSON.stringify(data ?? {}) : undefined,
+            credentials: 'same-origin',
+        });
+    } catch {
+        throw new Error('Povezava do PHP strežnika ni uspela. Zaženite XAMPP (Apache in MySQL) ali datoteko zagon.bat, nato stran odprite prek http://127.0.0.1:8000/. Ne odpirajte HTML datoteke neposredno ali prek Live Serverja.');
+    }
+
+    let result;
+    try {
+        result = await response.json();
+    } catch {
+        throw new Error('PHP API ni vrnil veljavnega odgovora. Stran odprite prek PHP strežnika, ne prek Live Serverja.');
+    }
     if (!response.ok) throw new Error(result.error || 'Zahteve ni bilo mogoče izvesti.');
     if (result.csrfToken) sessionStorage.setItem('benko-csrf-token', result.csrfToken);
     return result;
