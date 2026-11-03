@@ -1,0 +1,38 @@
+CREATE TABLE Stranka (
+  ID_stranke INT AUTO_INCREMENT PRIMARY KEY,
+  Ime VARCHAR(50) NOT NULL,
+  Priimek VARCHAR(50) NOT NULL,
+  E_posta VARCHAR(100) NOT NULL,
+  Telefon VARCHAR(30),
+  Datum_rojstva DATE NOT NULL,
+  Geslo VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Racun (
+  ID_racuna INT AUTO_INCREMENT PRIMARY KEY,
+  ID_stranke INT NOT NULL,
+  St_racuna VARCHAR(50) NOT NULL,
+  Stanje NUMERIC(12,2) NOT NULL,
+  Tip_racuna VARCHAR(50) NOT NULL,
+  CONSTRAINT fk_stranka_racun FOREIGN KEY (ID_stranke) 
+    REFERENCES Stranka(ID_stranke) ON DELETE CASCADE
+);
+
+CREATE TABLE Kredit (
+  ID_kredita INT AUTO_INCREMENT PRIMARY KEY,
+  ID_stranke INT NOT NULL,
+  Znesek NUMERIC(12, 2) NOT NULL,
+  Doba_let INT NOT NULL,
+  Obrestna_mera NUMERIC(5, 2) NOT NULL,
+  Mesecni_obrok NUMERIC(12, 2) NOT NULL,
+  CONSTRAINT fk_stranka_kredit FOREIGN KEY (ID_stranke) 
+    REFERENCES Stranka(ID_stranke) ON DELETE CASCADE
+);
+
+
+CREATE TABLE Storitev (
+  ID_storitve INT AUTO_INCREMENT PRIMARY KEY,
+  Naziv VARCHAR(100) NOT NULL,
+  Opis TEXT,
+  Pogoji TEXT
+);
